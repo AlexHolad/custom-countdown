@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 html {
   box-sizing: border-box;
@@ -10,7 +10,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
-
+  font-family: Comfortaa, sans-serif;
 }
 
 /* Video Background */
@@ -49,7 +49,7 @@ video {
   z-index: 2;
   display: flex;
   justify-content: center;
-
+  background: rgba(255, 255, 255, 0.95)
 }
 
 .input-container {
@@ -76,13 +76,13 @@ label {
 
 input {
   width: 95%;
-  margin-bottom: 10px;
+  margin: 10px 0;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
   background: #fff;
   outline: none;
-
+  font-family: Comfortaa, sans-serif;
 }
 
 /* Button */
@@ -93,21 +93,26 @@ button {
   margin-top: 15px;
   border: none;
   text-transform: uppercase;
-  background: #006959;
+  background: #465E3F;
   color: white;
   cursor: pointer;
   outline: none;
 }
 
+button:hover {
+  filter: brightness(105%);
+}
 
 
 /* Countdown */
 ul {
   margin-left: -45px;
+  display: flex;
+  flex-wrap: nowrap;
+
 }
 
 li {
-
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -126,6 +131,36 @@ li span {
   top: 60px;
 }
 
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(135, 141, 118);
+  }
+
+  25% {
+    color: rgb(192, 123, 115);
+  }
+
+  50% {
+    color: rgb(232, 176, 122);
+    transform: scale(1.2)
+  }
+
+  75% {
+    color: rgb(135, 141, 118);
+  }
+
+  85% {
+    color: rgb(232, 176, 122);
+  }
+
+  95% {
+    color: rgb(192, 123, 115);
+  }
+}
 
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
@@ -133,7 +168,7 @@ li span {
     height: 100vh;
     width: 100vw;
   }
-  
+
   video {
     object-fit: cover;
     object-position: 70%;
@@ -141,7 +176,8 @@ li span {
   }
 
   .container {
-
+    min-width: unset;
+    width: 95vw;
     min-height: 245px;
     padding: 20px;
     margin: 10px;
